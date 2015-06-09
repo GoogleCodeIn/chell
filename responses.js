@@ -8,7 +8,8 @@ var responses = [
 	{match: "snow,cold,freezing", response: "Aww :( I'll give you a hug to warm you up!"},
 	{match: "weather,great,good,nice", response: "Glad to hear! :)"},
 	{match: "rain,rainy", response: "That sucks. I hope it's not raining too much."},
-	{match: "who made you,creator,credits,admin,coded you", response: "Danny Wu and Peter Amidon made me!"}
+	{match: "who made you,creator,credits,admin,coded you", response: "Danny Wu and Peter Amidon made me!"},
+	{match: "qt,gtk,or,which isbetter", response: "Both sucks!"}
 ];
 
 
