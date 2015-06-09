@@ -12,10 +12,10 @@ function setupEventListeners() {
         if (event.keyCode == 13) {
             text = document.getElementById('chatText');
             text.innerText += 'user@localhost$ ' + input.value + '\n';
-            input.value = "";
-
 			var response = getResponse(input.value);
 			text.innerText += 'chell@remote$ ' + response + '\n';
+
+            input.value = "";
 
             text.scrollTop = text.scrollHeight;
         };
