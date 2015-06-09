@@ -21,7 +21,7 @@ function setupEventListeners() {
 }
 
 function normaliseText(text) {
-	return text.toLowerCase().replace(/!?.,/g, '').trim();
+	return text.toLowerCase().replace(/!?.,'"/g, '').trim();
 }
 
 function getResponse(input) {
