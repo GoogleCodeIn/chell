@@ -11,8 +11,11 @@ function setupEventListeners() {
     input.addEventListener('keydown', function(event) {
         if (event.keyCode == 13) {
             text = document.getElementById('chatText');
-            text.innerText += 'user@localhost$ > ' + input.value + '\n';
+            text.innerText += 'user@localhost$ ' + input.value + '\n';
             input.value = "";
+
+			var response = getResponse(input.value);
+			text.innerText += 'chell@remote$ ' + response + '\n';
         };
     });
 }
@@ -29,7 +32,7 @@ function getResponse(input) {
 		var responseScore = 0;
 
 		var matchTokens = responses[i].match.toLowerCase().split(",");
-		for (var j = 0; j < matchTokens.length; i++) {
+		for (var j = 0; j < matchTokens.length; j++) {
 			if (input.indexOf(matchTokens[j]) !== -1) {
 				if (input[0] === "!") {
 					responseScore -= 10;
