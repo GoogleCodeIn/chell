@@ -9,14 +9,14 @@ body {
 	width: 100%;
 	margin: 0 auto;
 }
-h1 {
+h1,h2 {
 	color: #CA3B20;
 }
 #chatText {
 	height: 325px;
 	background-color: #5C97E2;
 	overflow-y: scroll;
-	padding: 7px;
+	padding: 7px 13px;
 	box-sizing: border-box;
 }
 #chatInput {
