@@ -27,7 +27,7 @@ function normaliseText(text) {
 }
 
 function getResponse(input) {
-	var maxResponseScore = -1;
+	var maxResponseScore = -Infinity;
 	var maxResponseId = 0;
 
 	for (var i = 0; i < responses.length; i++) {
@@ -46,16 +46,17 @@ function getResponse(input) {
 
 		if (responses[i].used) {
 			// apply heavy penalty
-			responseScore *= 0.5;
-			responseScore -= 3;
+			responseScore /= (2 * responses[i].used);
+			responseScore -= (3 * responses[i].used);
 		}
+        console.log(responses[i].response + ":" + responseScore);
 
 		if (responseScore > maxResponseScore) {
 			maxResponseId = i;
 			maxResponseScore = responseScore;
 		}
 	}
-	responses[maxResponseId].used = true;
+	responses[maxResponseId].used = responses[maxResponseId].used + 1 || 1;
 	return evaluateResponse(responses[maxResponseId].response);
 }
 
