@@ -21,7 +21,7 @@ function setupEventListeners() {
 }
 
 function normaliseText(text) {
-	return text.toLowerCase().replace(/!?.,/g, '').trim();
+	return text.toLowerCase().replace(/!?.,'"/g, '').trim();
 }
 
 function getResponse(input) {
@@ -54,5 +54,13 @@ function getResponse(input) {
 		}
 	}
 	responses[maxResponseId].used = true;
-	return responses[maxResponseId].response;
+	return evaluateResponse(responses[maxResponseId].response);
+}
+
+function evaluateResponse(response) {
+    if (typeof response === "string" || response instanceof String) {
+        return response;
+    } else if (typeof response === "function") {
+        return evaluateResponse(response());
+    }
 }
