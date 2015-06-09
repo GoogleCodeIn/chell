@@ -54,11 +54,13 @@ function getResponse(input) {
 		}
 	}
 	responses[maxResponseId].used = true;
-    response = responses[maxResponseId].response;
+	return evaluateResponse(responses[maxResponseId].response);
+}
+
+function evaluateResponse(response) {
     if (typeof response === "string" || response instanceof String) {
         return response;
     } else if (typeof response === "function") {
-        return response();
+        return evaluateResponse(response());
     }
-	return responses[maxResponseId].response;
 }
