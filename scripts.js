@@ -1,5 +1,6 @@
-if (typeof responses === 'undefined')
+if (typeof responses === 'undefined') {
 	alert("Error: responses.js not loaded");
+}
 
 window.onload = function() {
     setupEventListeners();
