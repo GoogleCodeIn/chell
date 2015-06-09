@@ -16,6 +16,8 @@ function setupEventListeners() {
 
 			var response = getResponse(input.value);
 			text.innerText += 'chell@remote$ ' + response + '\n';
+
+            text.scrollTop = text.scrollHeight;
         };
     });
 }
