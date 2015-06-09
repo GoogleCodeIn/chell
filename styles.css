@@ -2,16 +2,22 @@
 body {
 	background-color: #6BAFE4;
 	font-family: "Roboto", "Arial";
+	color: #333;
 }
 .container {
 	max-width: 800px;
 	width: 100%;
 	margin: 0 auto;
 }
+h1 {
+	color: #CA3B20;
+}
 #chatText {
 	height: 325px;
 	background-color: #5C97E2;
 	overflow-y: scroll;
+	padding: 7px;
+	box-sizing: border-box;
 }
 #chatInput {
 	width: 100%;
