@@ -49,7 +49,6 @@ function getResponse(input) {
 			responseScore /= (2 * responses[i].used);
 			responseScore -= (3 * responses[i].used);
 		}
-        console.log(responses[i].response + ":" + responseScore);
 
 		if (responseScore > maxResponseScore) {
 			maxResponseId = i;
